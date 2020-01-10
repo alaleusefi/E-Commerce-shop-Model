@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WorldRemit.Model
 {
-    public class Book:Product
+    public class Book : Product
     {
 
     }

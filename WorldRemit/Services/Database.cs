@@ -8,28 +8,48 @@ namespace WorldRemit.Services
 {
     public class Database
     {
-        public static List<Product> Products = new List<Product>
+        public static List<Book> Books = new List<Book>
         {
-            new Product
+            new Book
             {
-                Name = "Iphone",
+                Name = "Book1",
                 ID = 1,
-                Company = "Apple"
+                Price = 30,
             },
-            new Product
+            new Book
             {
-                Name = "Android",
+                Name = "Book2",
                 ID = 2,
-                Company = "Samsung"
+                Price = 20,
             },
-            new Product
+            new Book
             {
-                Name = "Windows",
+                Name = "Book3",
                 ID = 3,
-                Company = "Microsoft"
+                Price = 250,
             }
         };
-
+        public static List<Video> Videos = new List<Video>
+        {
+            new Video
+            {
+                Name = "Video1",
+                ID = 4,
+                Price = 30,
+            },
+            new Video
+            {
+                Name = "Video2",
+                ID = 5,
+                Price = 20,
+            },
+            new Video
+            {
+                Name = "Video3",
+                ID = 6,
+                Price = 250,
+            }
+        };
 
     }
 }

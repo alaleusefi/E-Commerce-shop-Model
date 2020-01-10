@@ -1,38 +1,39 @@
-﻿@using WorldRemit.Model
-@model List<Product>
+﻿@{Layout ="_Layout";}
+@using WorldRemit.Model
+@model List<Book>
 <h2>Products list</h2>
-<div style="text-align: right;">
-    <button style="padding:5px 10px;background: lightgray;border-color: lightgray;border-radius: 5px;">
-    @Html.ActionLink("Add", "Add")
+<div class="top-buttons">
+    <button>
+        @Html.ActionLink("Add", "Add")
     </button>
 </div>
-<table style="border:1px solid black;width:70%;">
+<table>
     <thead>
-        <tr style="background: lightgray;line-height: 2;">
+        <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Company</th>
+            <th>Price</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-@foreach(var product in Model)
-{
-        <tr style="">
-            <td style="padding:5px;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgrey;">@product.ID</td>
-            <td style="padding:5px;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgrey;">@product.Name</td>
-            <td style="padding:5px;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgrey;">@product.Company</td>
-            <td style="padding:5px;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgrey;">
-                @*<a>Edit</a>*@
-                @Html.ActionLink("Edit","Edit",new { ID = product.ID})
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.ID</td>
+                <td>@book.Name</td>
+                <td>@book.Price</td>
+                <td>
+                    @*<a>Edit</a>*@
+                    @Html.ActionLink("Edit", "Edit", new { ID = book.ID })
                 </td>
-            <td style="padding:5px;border-bottom: 1px solid lightgrey;">
-                @*<a>Delete</a>*@
-                @Html.ActionLink("Delete","Delete",new { ID = product.ID})
-            </td>
-        </tr>
+                <td style="padding:5px;border-bottom: 1px solid lightgrey;">
+                    @*<a>Delete</a>*@
+                    @Html.ActionLink("Delete", "Delete", new { ID = book.ID })
+                </td>
+            </tr>
 
-}
+        }
     </tbody>
 </table>
