@@ -21,4 +21,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Layouts\" />
+  </ItemGroup>
+
 </Project>
