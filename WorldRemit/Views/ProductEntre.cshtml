@@ -1,0 +1,13 @@
+﻿@using WorldRemit.Model
+@model Product
+
+
+<form method="post" action="@((Model == null)? Url.Action("Create", "ProductsList") : Url.Action("Edit"))">
+    <label>Name</label>
+    <input type="text" name="Name" value="@Model?.Name"/>
+    <label>ID</label>
+    <input type="text" name="ID" value="@Model?.ID"/>
+    <label>Company</label>
+    <input type="text" name="Company" value="@Model?.Company" />
+    <input type="submit" name="Submit" />
+</form>
