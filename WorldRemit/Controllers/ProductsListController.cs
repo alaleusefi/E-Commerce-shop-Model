@@ -19,7 +19,7 @@ namespace WorldRemit.Controllers
         public IActionResult Index()
         {
           
-            return View("~/Views/ProductsList.cshtml", Database.Products);
+            return View("~/Views/ProductsList.cshtml", Database.Books);
         }
         public IActionResult Add()
         {
@@ -27,9 +27,9 @@ namespace WorldRemit.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Product product)
+        public IActionResult Create(Book book)
         {
-            Database.Products.Add(product);
+            Database.Books.Add(book);
             return RedirectToAction("Index");
 
         }
@@ -37,23 +37,22 @@ namespace WorldRemit.Controllers
         
         public IActionResult Edit(int id)
         {
-            var product = Database.Products.Single(p => p.ID == id);
+            var product = Database.Books.Single(p => p.ID == id);
             return View("~/Views/ProductEntre.cshtml", product);
         }
 
         [HttpPost]
-        public IActionResult Edit(Product product)
+        public IActionResult Edit(Book book)
         {
-            var result = Database.Products.Single(p => p.ID == product.ID);
-            result.Name = product.Name;
-            result.Company = product.Company;
+            var result = Database.Books.Single(p => p.ID == book.ID);
+            result.Name = book.Name;
             return RedirectToAction("Index");            
         }
 
         public IActionResult Delete(int id)
         {
-            var product = Database.Products.Single(p => p.ID == id);
-            Database.Products.Remove(product);
+            var book = Database.Books.Single(p => p.ID == id);
+            Database.Books.Remove(book);
             return RedirectToAction("Index");
         }
 

@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace WorldRemit.Model
 {
-    public class Product
+    public class Customer
     {
         public int ID { get; set; }
         public string Name { get; set; }
-
+         
+        public Address Address { get; set; }
     }
 }
