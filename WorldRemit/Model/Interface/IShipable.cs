@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace WorldRemit.Model
 {
-    public class Video : Product, IShippable
+    public interface IShippable
     {
-        public bool IsPhysical { get; set; }
+        bool IsPhysical { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace WorldRemit.Model
     {
         public int ID { get; set; }
         public string Name { get; set; }
-         
         public Address Address { get; set; }
+        public int Points { get; set; }
     }
 }

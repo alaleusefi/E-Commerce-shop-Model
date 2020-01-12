@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace WorldRemit.Model
 {
-    public class Video : Product, IShippable
+    public enum MembershipType
     {
-        public bool IsPhysical { get; set; }
+        Book, Video, Premium
     }
 }
