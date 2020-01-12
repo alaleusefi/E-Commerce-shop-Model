@@ -10,15 +10,8 @@ namespace Controllers
 {
     public class ProductsListController : Controller
     {
-        [Route("string")]
-        public string String()
-        {
-            return "This is a string from a controller";
-        }
-        
         public IActionResult Index()
         {
-          
             return View("~/Views/ProductsList.cshtml", Database.Books);
         }
         public IActionResult Add()
@@ -31,10 +24,8 @@ namespace Controllers
         {
             Database.Books.Add(book);
             return RedirectToAction("Index");
-
         }
 
-        
         public IActionResult Edit(int id)
         {
             var product = Database.Books.Single(p => p.ID == id);
@@ -46,7 +37,7 @@ namespace Controllers
         {
             var result = Database.Books.Single(p => p.ID == book.ID);
             result.Name = book.Name;
-            return RedirectToAction("Index");            
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
@@ -55,7 +46,5 @@ namespace Controllers
             Database.Books.Remove(book);
             return RedirectToAction("Index");
         }
-
-
     }
 }
