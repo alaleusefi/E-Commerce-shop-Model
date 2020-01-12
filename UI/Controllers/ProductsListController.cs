@@ -1,5 +1,5 @@
 ﻿using Model;
-using Services;
+using Service;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,9 +10,14 @@ namespace Controllers
 {
     public class ProductsListController : Controller
     {
+        private readonly IProductService ProductService;
+        public ProductsListController(IProductService productService)
+        {
+            ProductService = productService;
+        }
         public IActionResult Index()
         {
-            return View("~/Views/ProductsList.cshtml", Database.Books);
+            return View("~/Views/ProductsList.cshtml", ProductService.GetAll());
         }
         public IActionResult Add()
         {
@@ -20,31 +25,25 @@ namespace Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Book book)
+        public IActionResult Create(Product product)
         {
-            Database.Books.Add(book);
-            return RedirectToAction("Index");
+            throw new NotImplementedException();
         }
 
         public IActionResult Edit(int id)
         {
-            var product = Database.Books.Single(p => p.ID == id);
-            return View("~/Views/ProductEntre.cshtml", product);
+            throw new NotImplementedException();
         }
 
         [HttpPost]
-        public IActionResult Edit(Book book)
+        public IActionResult Edit(Product product)
         {
-            var result = Database.Books.Single(p => p.ID == book.ID);
-            result.Name = book.Name;
-            return RedirectToAction("Index");
+            throw new NotImplementedException();
         }
 
         public IActionResult Delete(int id)
         {
-            var book = Database.Books.Single(p => p.ID == id);
-            Database.Books.Remove(book);
-            return RedirectToAction("Index");
+            throw new NotImplementedException();
         }
     }
 }

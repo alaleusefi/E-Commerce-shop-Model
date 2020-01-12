@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Services
+namespace Service
 {
-    public class Database
+    public class DataServiceMock
     {
         public static List<Book> Books = new List<Book>
         {

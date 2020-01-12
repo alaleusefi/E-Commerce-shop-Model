@@ -1,6 +1,6 @@
 ﻿@{Layout ="_Layout";}
 @using Model
-@model List<Book>
+@model List<Product>
 <h2>Products list</h2>
 <div class="top-buttons">
     <button>
@@ -18,19 +18,19 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var book in Model)
+        @foreach (var product in Model)
         {
             <tr>
-                <td>@book.ID</td>
-                <td>@book.Name</td>
-                <td>@book.Price</td>
+                <td>@product.ID</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
                 <td>
                     @*<a>Edit</a>*@
-                    @Html.ActionLink("Edit", "Edit", new { ID = book.ID })
+                    @Html.ActionLink("Edit", "Edit", new { ID = product.ID })
                 </td>
                 <td style="padding:5px;border-bottom: 1px solid lightgrey;">
                     @*<a>Delete</a>*@
-                    @Html.ActionLink("Delete", "Delete", new { ID = book.ID })
+                    @Html.ActionLink("Delete", "Delete", new { ID = product.ID })
                 </td>
             </tr>
 
