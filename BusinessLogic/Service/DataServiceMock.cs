@@ -2,13 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Service
 {
-    public class DataServiceMock
+    public class DataServiceMock : IDataService
     {
-        public static List<Book> Books = new List<Book>
+        private IEnumerable<Product> Products => Enumerable.Union<Product>(Books, Videos);
+        private List<Book> Books = new List<Book>
         {
             new Book
             {
@@ -29,7 +31,7 @@ namespace Service
                 Price = 250,
             }
         };
-        public static List<Video> Videos = new List<Video>
+        private List<Video> Videos = new List<Video>
         {
             new Video
             {
@@ -51,5 +53,18 @@ namespace Service
             }
         };
 
+        public Task<IEnumerable<T>> GetList<T>()
+        {
+            var propertyInfos = this.GetType().GetProperties(BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.NonPublic);
+            var propertyInfo = propertyInfos.SingleOrDefault(pi => pi.PropertyType == typeof(IEnumerable<T>));
+            if (propertyInfo == null) throw new NullReferenceException($"{nameof(DataServiceMock)} knows no source collection of type {typeof(T)}.");
+            var property = (IEnumerable<T>)propertyInfo.GetValue(this);
+            return Task.FromResult(property);
+        }
+
+        public Task<T> Get<T>()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

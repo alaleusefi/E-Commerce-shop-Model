@@ -15,9 +15,9 @@ namespace Controllers
         {
             ProductService = productService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View("~/Views/ProductsList.cshtml", ProductService.GetAll());
+            return View("~/Views/ProductsList.cshtml", await ProductService.GetAll());
         }
         public IActionResult Add()
         {

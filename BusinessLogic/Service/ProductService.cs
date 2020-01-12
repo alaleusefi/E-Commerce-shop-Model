@@ -2,14 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Service
 {
     public class ProductService : IProductService
     {
-        public IEnumerable<Product> GetAll()
+        private readonly IDataService DataService;
+        public ProductService(IDataService dataService)
         {
-            throw new NotImplementedException();
+            DataService = dataService;
+        }
+        public Task<IEnumerable<Product>> GetAll()
+        {
+            return DataService.GetList<Product>();
         }
     }
 }

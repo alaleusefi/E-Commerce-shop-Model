@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public interface IProductService
+    public interface IDataService
     {
-        Task<IEnumerable<Product>> GetAll();
+        public Task<IEnumerable<T>> GetList<T>();
+        public Task<T> Get<T>();
     }
 }

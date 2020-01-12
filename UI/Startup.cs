@@ -17,6 +17,7 @@ namespace UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IProductService, ProductService>();
+            services.AddSingleton<IDataService, DataServiceMock>();
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
