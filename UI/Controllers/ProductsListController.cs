@@ -1,12 +1,12 @@
-﻿using WorldRemit.Model;
-using WorldRemit.Services;
+﻿using Model;
+using Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WorldRemit.Controllers
+namespace Controllers
 {
     public class ProductsListController : Controller
     {

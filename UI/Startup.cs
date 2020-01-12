@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WorldRemit
+namespace UI
 {
     public class Startup
     {
@@ -32,11 +32,6 @@ namespace WorldRemit
                     name: "default",
                     template: "{controller=ProductsList}/{action=Index}/{id?}");
             });
-
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
         }
     }
 }

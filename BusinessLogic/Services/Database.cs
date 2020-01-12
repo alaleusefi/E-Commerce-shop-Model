@@ -1,10 +1,10 @@
-﻿using WorldRemit.Model;
+﻿using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WorldRemit.Services
+namespace Services
 {
     public class Database
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WorldRemit.Model
+namespace Model
 {
-    public class Membership : Product
+    public class Video : Product, IShippable
     {
-        public MembershipType Type { get; set; }
+        public bool IsPhysical { get; set; }
     }
 }

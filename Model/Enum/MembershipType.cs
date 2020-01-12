@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WorldRemit.Model
+namespace Model
 {
-    public interface IShippable
+    public enum MembershipType
     {
-        bool IsPhysical { get; set; }
+        Book, Video, Premium
     }
 }
